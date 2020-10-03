@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     private float movement = 0f;
     private Rigidbody2D rigidBody;
     bool isgrounded = true;
+    public Animator animator;
 
 
     // Start is called before the first frame update
@@ -24,6 +25,8 @@ public class PlayerController : MonoBehaviour
     {
 
         movement = Input.GetAxis("Horizontal");
+        animator.SetFloat("speed", Mathf.Abs(movement));
+
         if (movement > 0f) //Moving to the right
         {
             rigidBody.velocity = new Vector2(movement * playerSpeed, rigidBody.velocity.y);
