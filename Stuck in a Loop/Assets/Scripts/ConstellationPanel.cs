@@ -13,6 +13,8 @@ public class ConstellationPanel : MonoBehaviour
     public Sprite highlightedImage;
     public Sprite normalImage;
     public GameObject constellationPanel;
+    public RotateClockwise rotateClockwiseScript;
+
 
     // Start is called before the first frame update
     void OnTriggerEnter2D(Collider2D other)
@@ -43,6 +45,11 @@ public class ConstellationPanel : MonoBehaviour
             hitEObject.SetActive(false);
             imageRenderer.sprite = normalImage;
             constellationPanel.SetActive(false);
+            rotateClockwiseScript.resetConstellations();
+
+
         }
     }
+
+    
 }
