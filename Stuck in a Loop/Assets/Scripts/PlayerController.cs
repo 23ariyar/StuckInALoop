@@ -51,10 +51,7 @@ public class PlayerController : MonoBehaviour
             rigidBody.velocity = new Vector2(rigidBody.velocity.x, jumpSpeed);
            
         }
-        if (sceneName == "MainArea" && playerTransform.position.x < 88f)
-        {
-            cameraTransform.position = new Vector3(cameraTransform.position.x, 32f, cameraTransform.position.z);
-        }
+        
     }
 
     void OnCollisionEnter2D(Collision2D other)
