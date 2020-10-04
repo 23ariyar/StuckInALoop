@@ -12,7 +12,7 @@ public class AutoBackgroundSwitcher : MonoBehaviour
     public Sprite backgroundFive;
     public SpriteRenderer backgroundRenderer;
     public int backgroundIndex = 0;
-    List<Sprite> backgrounds = new List<Sprite>();
+    List<Sprite> backgrounds = new List<Sprite>(); //list of sprites
 
     public RoundReset resetScript;
 
@@ -20,23 +20,23 @@ public class AutoBackgroundSwitcher : MonoBehaviour
     void Start()
     {
         
-        backgrounds.Add(backgroundOne);
+        backgrounds.Add(backgroundOne); //adding ecah sprite to list
         backgrounds.Add(backgroundTwo);
         backgrounds.Add(backgroundThree);
         backgrounds.Add(backgroundFour);
         backgrounds.Add(backgroundFive);
 
-        InvokeRepeating("SwitchBackground", 0.0f, 12.0f);
+        InvokeRepeating("SwitchBackground", 0.0f, 12.0f); //every 12 seconds switch background
         
     }
 
     // Update is called once per frame
     public void SwitchBackground()
     {
-        if (backgroundIndex + 1 < 5) {
+        if (backgroundIndex + 1 < 5) { //if there's still more to go
             backgroundIndex += 1;
             backgroundRenderer.sprite = backgrounds[backgroundIndex];
-        } else
+        } else //otherwise reset the background and call the resetall function in the resetscript
         {
             backgroundIndex = 0;
             backgroundRenderer.sprite = backgroundOne;
