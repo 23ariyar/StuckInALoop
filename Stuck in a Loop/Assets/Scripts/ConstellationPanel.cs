@@ -29,7 +29,7 @@ public class ConstellationPanel : MonoBehaviour
     {
         if (other.gameObject.tag == "Player" && Input.GetKey(KeyCode.E))
         {
-            Debug.Log("pressed");
+            
             constellationPanel.SetActive(true);
             hitEObject.SetActive(false);
         }
