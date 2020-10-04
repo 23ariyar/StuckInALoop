@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     bool isgrounded = true;
     public Animator animator;
     public string sceneName;
+    public Transform cameraTransform;
 
 
     // Start is called before the first frame update
@@ -52,7 +53,7 @@ public class PlayerController : MonoBehaviour
         }
         if (sceneName == "MainArea" && playerTransform.position.x < 88f)
         {
-            SceneManager.LoadScene(2);
+            cameraTransform.position = new Vector3(cameraTransform.position.x, 32f, cameraTransform.position.z);
         }
     }
 
