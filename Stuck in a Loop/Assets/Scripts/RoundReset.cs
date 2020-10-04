@@ -18,5 +18,6 @@ public class RoundReset : MonoBehaviour
     public void resetPlayer()
     {
         player.transform.position = new Vector3(103f, 61f, 90f);
+        player.SetActive(true);
     }
 }
