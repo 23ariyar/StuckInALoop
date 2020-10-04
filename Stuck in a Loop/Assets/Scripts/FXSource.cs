@@ -10,7 +10,7 @@ public class FXSource : MonoBehaviour
 
     public void PlayButtonSounds()
     {
-        Debug.Log("Played");
+        
         audioSource.Play();
     }
 }

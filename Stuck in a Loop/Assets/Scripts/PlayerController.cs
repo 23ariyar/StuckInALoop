@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class PlayerController : MonoBehaviour
     private float movement = 0f;
     private Rigidbody2D rigidBody;
     bool isgrounded = true;
+    public Animator animator;
+    public string sceneName;
+    public Transform cameraTransform;
 
 
     // Start is called before the first frame update
@@ -17,6 +21,7 @@ public class PlayerController : MonoBehaviour
     {
         rigidBody = GetComponent<Rigidbody2D>();
         playerTransform = GetComponent<Transform>();
+        
     }
 
     // Update is called once per frame
@@ -24,6 +29,8 @@ public class PlayerController : MonoBehaviour
     {
 
         movement = Input.GetAxis("Horizontal");
+        animator.SetFloat("speed", Mathf.Abs(movement));
+
         if (movement > 0f) //Moving to the right
         {
             rigidBody.velocity = new Vector2(movement * playerSpeed, rigidBody.velocity.y);
@@ -42,8 +49,9 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Jump") && isgrounded == true) //Jumping
         {
             rigidBody.velocity = new Vector2(rigidBody.velocity.x, jumpSpeed);
+           
         }
-
+        
     }
 
     void OnCollisionEnter2D(Collision2D other)
@@ -68,6 +76,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.tag == "Platform" || other.gameObject.tag == "Barrel") //If it's on top of a platform or a barell, it should be grounded
         {
             isgrounded = true;
+            
         }
         else if (other.gameObject.tag.Contains("Sticky")) //If it encounters a sticky object
         {

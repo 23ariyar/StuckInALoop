@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Platform
   layers:
   - Default
   - TransparentFX
@@ -49,4 +50,7 @@ TagManager:
     locked: 0
   - name: Foreground
     uniqueID: 1946200865
+    locked: 0
+  - name: UI
+    uniqueID: 3903459929
     locked: 0
