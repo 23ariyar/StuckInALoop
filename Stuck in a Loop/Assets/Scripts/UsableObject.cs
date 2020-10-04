@@ -11,15 +11,15 @@ public class UsableObject : MonoBehaviour
     public Sprite normalImage;
   
 
-    //void OnTriggerEnter2D(Collider2D other)
-    //{
-    //    if (other.gameObject.tag == "Player") //if colliding with player
-    //    {
-    //        hitEObject.SetActive(true);
-    //        imageRenderer.sprite = highlightedImage;
-//
-    //    }
-   // }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Player") //if colliding with player
+        {
+            hitEObject.SetActive(true);
+            imageRenderer.sprite = highlightedImage;
+
+        }
+    }
 
     void OnTriggerExit2D(Collider2D other)
     {
