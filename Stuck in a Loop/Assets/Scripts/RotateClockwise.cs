@@ -55,7 +55,7 @@ public class RotateClockwise : MonoBehaviour
     public void switchToNormal()
     {
         
-        buttonOne.GetComponent<Image>().sprite = constellationTwoComplete;
+        buttonOne.GetComponent<Image>().sprite = constellationOne;
         buttonTwo.GetComponent<Image>().sprite = constellationTwo;
         buttonThree.GetComponent<Image>().sprite = constellationThree;
         buttonFour.GetComponent<Image>().sprite = constellationFour;
