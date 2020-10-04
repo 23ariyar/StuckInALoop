@@ -76,7 +76,8 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.tag == "Platform" || other.gameObject.tag == "Barrel") //If it's on top of a platform or a barell, it should be grounded
         {
             isgrounded = true;
-            
+           
+
         }
         else if (other.gameObject.tag.Contains("Sticky")) //If it encounters a sticky object
         {

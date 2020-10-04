@@ -5,10 +5,13 @@ using UnityEngine;
 public class RoundReset : MonoBehaviour
 {
     public GameObject player;
+    public GameObject mainCamera;
+    public Vector3 cameraResetPos;
 
     public void ResetAll()
     {
         resetPlayer();
+        resetCamera();
     }
     public void ResetBackground()
     {
@@ -17,7 +20,12 @@ public class RoundReset : MonoBehaviour
 
     public void resetPlayer()
     {
-        player.transform.position = new Vector3(103f, 61f, 90f);
+        player.transform.position = new Vector3(103f, 56f, 90f);
         player.SetActive(true);
+    }
+
+    public void resetCamera()
+    {
+        mainCamera.transform.position = cameraResetPos;
     }
 }
