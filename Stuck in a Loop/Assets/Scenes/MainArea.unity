@@ -704,9 +704,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8a26e62280dd8743ac4e4f1b4d4135a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 3
+  playerSpeed: 5
   jumpSpeed: 5
   animator: {fileID: 442832612}
+  sceneName: MainArea
 --- !u!50 &442832616
 Rigidbody2D:
   serializedVersion: 4
@@ -1132,7 +1133,7 @@ MonoBehaviour:
     this loop by solvings puzzles and completing tasks.  after you respawn, your
     completed tasks will remain finished; however, if you were midway through a task,
     it will be reset. there is no explicit timer, however the music and background
-    can indicate how much time you have left
+    will indicate how much time you have left
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
@@ -2675,7 +2676,7 @@ GameObject:
   - component: {fileID: 1990038251}
   - component: {fileID: 1990038250}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: HitEText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
