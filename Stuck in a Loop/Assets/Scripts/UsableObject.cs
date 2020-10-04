@@ -1,18 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UsableObject : MonoBehaviour
 {
     public GameObject hitEObject; //gameObject for hit e to use text
-
+    public SpriteRenderer imageRenderer;
+    public Sprite highlightedImage;
+    public Sprite normalImage;
   
 
-    void OnTriggerStay2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player") //if colliding with player
         {
             hitEObject.SetActive(true);
+            imageRenderer.sprite = highlightedImage;
+
         }
     }
 
@@ -22,6 +27,7 @@ public class UsableObject : MonoBehaviour
         if (other.gameObject.tag == "Player") //if colliding with player
         {
             hitEObject.SetActive(false);
+            imageRenderer.sprite = normalImage;
         }
     }
 
