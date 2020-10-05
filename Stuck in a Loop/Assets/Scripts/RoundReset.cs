@@ -10,6 +10,7 @@ public class RoundReset : MonoBehaviour
     public Vector3 cameraResetPos;
     public GameObject roundLoopedImage;
     public Text roundsDisplayUI;
+    public AudioSource audioSource;
 
     private int roundsCompleted = 0;
 
@@ -20,6 +21,7 @@ public class RoundReset : MonoBehaviour
         resetPlayer();
         //resetCamera();
         displayRoundLooped();
+        resetAudio();
     }
     public void ResetBackground()
     {
@@ -35,6 +37,13 @@ public class RoundReset : MonoBehaviour
     public void resetCamera()
     {
         mainCamera.transform.position = cameraResetPos;
+    }
+
+    public void resetAudio()
+    {
+        audioSource.Stop();
+        audioSource.Play();
+        
     }
 
     public void displayRoundLooped()
