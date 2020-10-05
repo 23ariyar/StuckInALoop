@@ -38,7 +38,7 @@ public class PillarUser : MonoBehaviour
             } else
             {
                 textPanel.SetActive(true);
-                m_Text.text = "You win!";
+                m_Text.text = "Enter the door!";
                 Invoke("turnOffTextUI", 2f);
                 end.SetActive(true);
             }
