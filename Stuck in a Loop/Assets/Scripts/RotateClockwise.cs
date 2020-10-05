@@ -36,16 +36,16 @@ public class RotateClockwise : MonoBehaviour
 
     public void Rotate(RectTransform buttonTransform)
     {
-       
+
         buttonTransform.Rotate(0.0f, 0.0f, 90.0f, Space.World);
-       
+
 
 
     }
 
     public void Check()
     {
-        buttonOne.GetComponent<Image>().sprite = constellationTwoComplete;
+        buttonOne.GetComponent<Image>().sprite = constellationOneComplete;
         buttonTwo.GetComponent<Image>().sprite = constellationTwoComplete;
         buttonThree.GetComponent<Image>().sprite = constellationThreeComplete;
         buttonFour.GetComponent<Image>().sprite = constellationFourComplete;
@@ -54,8 +54,8 @@ public class RotateClockwise : MonoBehaviour
 
     public void switchToNormal()
     {
-        
-        buttonOne.GetComponent<Image>().sprite = constellationTwoComplete;
+
+        buttonOne.GetComponent<Image>().sprite = constellationOne;
         buttonTwo.GetComponent<Image>().sprite = constellationTwo;
         buttonThree.GetComponent<Image>().sprite = constellationThree;
         buttonFour.GetComponent<Image>().sprite = constellationFour;
@@ -69,8 +69,17 @@ public class RotateClockwise : MonoBehaviour
 
         }
 
-
+        resetConstellations();
 
     }
+
+    public void resetConstellations()
+    {
+        buttonOne.transform.localEulerAngles = new Vector3(0, 0, 0);
+        buttonTwo.transform.localEulerAngles = new Vector3(0, 0, 0);
+        buttonThree.transform.localEulerAngles = new Vector3(0, 0, 0);
+        buttonFour.transform.localEulerAngles = new Vector3(0, 0, 0);
+    }
+
 
 }
