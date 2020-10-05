@@ -8,6 +8,9 @@ public class TaskManager : MonoBehaviour
     private bool constellationTask = false;
     //private bool keypadOpener = false;
     private bool clockTask = false;
+    private bool pianoTask = false;
+
+
 
     public int TOTAL_TASKS;
     public int completedTasks;
@@ -34,6 +37,18 @@ public class TaskManager : MonoBehaviour
         Invoke("taskCompleteSetInactive", 2f);
         //keypadOpener = true;
     }
+
+    public void pianoCompleted()
+    {
+        taskComplete.SetActive(true);
+        Invoke("taskCompleteSetInactive", 2f);
+        addTasks(pianoTask);
+        pianoTask = true;
+
+    }
+
+
+
 
     public void clockCompleted()
     {

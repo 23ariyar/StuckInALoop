@@ -3444,6 +3444,7 @@ MonoBehaviour:
   highlightedImage: {fileID: 21300000, guid: 3088b6ded2cced24ab5367218098014b, type: 3}
   normalImage: {fileID: 21300000, guid: 3088b6ded2cced24ab5367218098014b, type: 3}
   clockPanel: {fileID: 1629341874}
+  hourHandTransform: {fileID: 258700885}
 --- !u!58 &695783453
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5472,7 +5473,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1214204205}
   - component: {fileID: 1214204207}
-  - component: {fileID: 1214204206}
   m_Layer: 0
   m_Name: caveground (2)
   m_TagString: Platform
@@ -5494,32 +5494,6 @@ Transform:
   m_Father: {fileID: 1459981104}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1214204206
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1214204204}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -5.28619}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 23.88, y: 16.685682}
-    newSize: {x: 23.88, y: 16.685682}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 23.88, y: 6.1133027}
-  m_EdgeRadius: 0
 --- !u!212 &1214204207
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7135,7 +7109,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -5.301159}
+  m_Offset: {x: 9.410425, y: -5.301159}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -7146,7 +7120,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 23.88, y: 6.0833645}
+  m_Size: {x: 42.700848, y: 6.0833645}
   m_EdgeRadius: 0
 --- !u!212 &1470682953
 SpriteRenderer:
@@ -8132,7 +8106,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1650373263}
   - component: {fileID: 1650373265}
-  - component: {fileID: 1650373264}
   m_Layer: 0
   m_Name: caveground (1)
   m_TagString: Platform
@@ -8154,32 +8127,6 @@ Transform:
   m_Father: {fileID: 1459981104}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1650373264
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1650373262}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -5.28619}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 23.88, y: 16.685682}
-    newSize: {x: 23.88, y: 16.685682}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 23.88, y: 6.1133027}
-  m_EdgeRadius: 0
 --- !u!212 &1650373265
 SpriteRenderer:
   m_ObjectHideFlags: 0

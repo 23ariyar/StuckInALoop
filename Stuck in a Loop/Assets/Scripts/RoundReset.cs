@@ -18,7 +18,7 @@ public class RoundReset : MonoBehaviour
         roundsCompleted++;
         roundsDisplayUI.text = "ROUNDS: " + roundsCompleted;
         resetPlayer();
-        resetCamera();
+        //resetCamera();
         displayRoundLooped();
     }
     public void ResetBackground()
