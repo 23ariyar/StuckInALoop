@@ -60,7 +60,7 @@ public class RotateClockwise : MonoBehaviour
         buttonThree.GetComponent<Image>().sprite = constellationThree;
         buttonFour.GetComponent<Image>().sprite = constellationFour;
         //Debug.Log((buttonOne.GetComponent<RectTransform>().eulerAngles.z == 180 && buttonTwo.GetComponent<RectTransform>().eulerAngles.z == 90 && buttonThree.GetComponent<RectTransform>().eulerAngles.z == 180 && buttonFour.GetComponent<RectTransform>().eulerAngles.z == 0).ToString());
-        if (buttonOne.GetComponent<RectTransform>().eulerAngles.z == 180 && buttonTwo.GetComponent<RectTransform>().eulerAngles.z == 90 && buttonThree.GetComponent<RectTransform>().eulerAngles.z == 180 && buttonFour.GetComponent<RectTransform>().eulerAngles.z == 0)
+        if (buttonOne.GetComponent<RectTransform>().eulerAngles.z == 0 && buttonTwo.GetComponent<RectTransform>().eulerAngles.z == 0 && buttonThree.GetComponent<RectTransform>().eulerAngles.z == 0 && buttonFour.GetComponent<RectTransform>().eulerAngles.z == 0)
         {
 
             taskScript.constellationCompleted();
@@ -75,9 +75,9 @@ public class RotateClockwise : MonoBehaviour
 
     public void resetConstellations()
     {
-        buttonOne.transform.localEulerAngles = new Vector3(0, 0, 0);
-        buttonTwo.transform.localEulerAngles = new Vector3(0, 0, 0);
-        buttonThree.transform.localEulerAngles = new Vector3(0, 0, 0);
+        buttonOne.transform.localEulerAngles = new Vector3(0, 0, 90);
+        buttonTwo.transform.localEulerAngles = new Vector3(0, 0, 180);
+        buttonThree.transform.localEulerAngles = new Vector3(0, 0, -90);
         buttonFour.transform.localEulerAngles = new Vector3(0, 0, 0);
     }
 

@@ -36,7 +36,7 @@ public class TaskManager : MonoBehaviour
         if (taskCompeletedBool == false)
         {
             completedTasks += completed;
-            tasksDisplayUI.text = "TASKS: " + completedTasks + " / " + TOTAL_TASKS;
+            tasksDisplayUI.text = "KEYS: " + completedTasks + " / " + TOTAL_TASKS;
            
         }
         
