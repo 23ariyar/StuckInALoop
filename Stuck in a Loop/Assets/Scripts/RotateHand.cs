@@ -21,13 +21,13 @@ public class RotateHand : MonoBehaviour
     public void Check()
     {
         
-        if (hourHandTransform.rotation.eulerAngles.z - 90 > 0.001)
+        if (hourHandTransform.rotation.eulerAngles.z - 90 < 0.001)
         {
             clockPanel.SetActive(false);
             taskManager.clockCompleted();
         } else
         {
-            hourHandTransform.eulerAngles.Set(0f, 0f, 0f);
+            hourHandTransform.eulerAngles = new Vector3(0f, 0f, 0f);
         }
     }
 }

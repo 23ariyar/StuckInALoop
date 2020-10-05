@@ -10,7 +10,7 @@ public class ClockUser : MonoBehaviour
     public Sprite highlightedImage;
     public Sprite normalImage;
     public GameObject clockPanel;
-
+    public Transform hourHandTransform;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -41,6 +41,7 @@ public class ClockUser : MonoBehaviour
             hitEObject.SetActive(false);
             imageRenderer.sprite = normalImage;
             clockPanel.SetActive(false);
+            hourHandTransform.eulerAngles.Set(0f, 0f, 0f);
         }
     }
 
