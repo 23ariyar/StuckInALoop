@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+
 
 public class RotateClockwise : MonoBehaviour
 {
@@ -21,6 +23,11 @@ public class RotateClockwise : MonoBehaviour
     public Sprite constellationTwo;
     public Sprite constellationThree;
     public Sprite constellationFour;
+    public GameObject border;
+
+  
+    public GameObject textPanel;
+    public GameObject textToChange;
 
     //script for task manager
     public TaskManager taskScript;
@@ -50,6 +57,7 @@ public class RotateClockwise : MonoBehaviour
         buttonThree.GetComponent<Image>().sprite = constellationThreeComplete;
         buttonFour.GetComponent<Image>().sprite = constellationFourComplete;
         Invoke("switchToNormal", 2.0f);
+        
     }
 
     public void switchToNormal()
@@ -65,12 +73,27 @@ public class RotateClockwise : MonoBehaviour
 
             taskScript.constellationCompleted();
             constellationPanel.SetActive(false);
+            border.SetActive(false);
             //task completed
 
         }
+        else
+        {
+            constellationPanel.SetActive(false);
+            textPanel.SetActive(true);
 
-        resetConstellations();
+            TextMeshProUGUI m_Text = textToChange.GetComponent<TextMeshProUGUI>();
+            m_Text.SetText("Try again next loop");
+            Invoke("turnOffText", 2f);
+        }
+        
 
+
+    }
+
+    public void turnOffText()
+    {
+        textPanel.SetActive(false);
     }
 
     public void resetConstellations()

@@ -10,10 +10,19 @@ public class keypadButtonsSetup : MonoBehaviour
     public Button buttonThree;
     public Button buttonFour;
     public Button buttonFive;
+    public Button buttonSix;
+    public Button buttonSeven;
+    public Button buttonEight;
+    public Button buttonNine;
+
+
+
+
+
     public GameObject keypadPanel;
     public TaskManager taskManager;
-    public GameObject triggerBorder;
-    public GameObject noTriggerBorder;
+    public GameObject borderPanel;
+
     
     
 
@@ -26,15 +35,20 @@ public class keypadButtonsSetup : MonoBehaviour
         buttonThree.onClick.AddListener(() => ButtonSequenceDetector("3"));
         buttonFour.onClick.AddListener(() => ButtonSequenceDetector("4"));
         buttonFive.onClick.AddListener(() => ButtonSequenceDetector("5"));
+        buttonSix.onClick.AddListener(() => ButtonSequenceDetector("6"));
+        buttonSeven.onClick.AddListener(() => ButtonSequenceDetector("7"));
+        buttonEight.onClick.AddListener(() => ButtonSequenceDetector("8"));
+        buttonNine.onClick.AddListener(() => ButtonSequenceDetector("9"));
+
 
     }
 
     private void ButtonSequenceDetector(string key)
     {
 
-        if (key == "1" || keyOneHasBeenPressed)
+        if (key == "9" || keyOneHasBeenPressed)
         {
-            if (key == "1")
+            if (key == "9")
             {
                 keyOneHasBeenPressed = true;
                 return;
@@ -50,11 +64,11 @@ public class keypadButtonsSetup : MonoBehaviour
                     }
                     else
                     {
-                        if (key == "3")
+                        if (key == "7")
                         {
                             keypadPanel.SetActive(false);
-                            noTriggerBorder.SetActive(false);
-                            triggerBorder.SetActive(false);
+                            borderPanel.SetActive(false);
+                            
                             taskManager.keypadCompleted();
                         }
                     }
