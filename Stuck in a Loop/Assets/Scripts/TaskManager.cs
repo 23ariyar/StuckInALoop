@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class TaskManager : MonoBehaviour
 {
     private bool constellationTask = false;
+    private bool keypadOpener = false;
     public int TOTAL_TASKS;
     private int completedTasks;
     public Text tasksDisplayUI;
@@ -13,7 +14,7 @@ public class TaskManager : MonoBehaviour
     public GameObject taskComplete; 
     void Update()
     {
-        //Debug.Log(constellationTask.ToString());
+        tasksDisplayUI.text = "KEYS: 0" + " / " + TOTAL_TASKS;
     }
 
     public void constellationCompleted()
@@ -25,6 +26,13 @@ public class TaskManager : MonoBehaviour
         constellationTask = true;
     }
 
+    public void keypadCompleted()
+    {
+        taskComplete.SetActive(true);
+        Invoke("taskCompleteSetInactive", 2f);
+        keypadOpener = true;
+    }
+
 
     public void taskCompleteSetInactive()
     {
@@ -33,7 +41,7 @@ public class TaskManager : MonoBehaviour
 
     public void addTasks(bool taskCompeletedBool, int completed = 1)
     {
-        if (taskCompeletedBool == false)
+        if (taskCompeletedBool == false )
         {
             completedTasks += completed;
             tasksDisplayUI.text = "KEYS: " + completedTasks + " / " + TOTAL_TASKS;
