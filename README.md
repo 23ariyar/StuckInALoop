@@ -1,4 +1,4 @@
 # StuckInALoop
 Ludum Dare October 2020
 Link to the game: 
-https://aleelee.itch.io/breakout
+https://23ariyar.itch.io/breakout
