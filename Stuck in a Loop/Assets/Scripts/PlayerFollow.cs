@@ -27,7 +27,7 @@ public class PlayerFollow : MonoBehaviour
         }
         if (playerTransform.position.y > yMin && playerTransform.position.y < yMax)
         {
-            cameraTransform.position = new Vector3(cameraTransform.position.x, playerTransform.position.y, cameraTransform.position.z);
+            cameraTransform.position = new Vector3(cameraTransform.position.x, playerTransform.position.y+2, cameraTransform.position.z);
         }
     }
 }

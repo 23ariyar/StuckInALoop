@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+
 
 public class RotateClockwise : MonoBehaviour
 {
@@ -21,6 +23,11 @@ public class RotateClockwise : MonoBehaviour
     public Sprite constellationTwo;
     public Sprite constellationThree;
     public Sprite constellationFour;
+    public GameObject border;
+
+  
+    public GameObject textPanel;
+    public GameObject textToChange;
 
     //script for task manager
     public TaskManager taskScript;
@@ -50,6 +57,7 @@ public class RotateClockwise : MonoBehaviour
         buttonThree.GetComponent<Image>().sprite = constellationThreeComplete;
         buttonFour.GetComponent<Image>().sprite = constellationFourComplete;
         Invoke("switchToNormal", 2.0f);
+        
     }
 
     public void switchToNormal()
@@ -60,24 +68,39 @@ public class RotateClockwise : MonoBehaviour
         buttonThree.GetComponent<Image>().sprite = constellationThree;
         buttonFour.GetComponent<Image>().sprite = constellationFour;
         //Debug.Log((buttonOne.GetComponent<RectTransform>().eulerAngles.z == 180 && buttonTwo.GetComponent<RectTransform>().eulerAngles.z == 90 && buttonThree.GetComponent<RectTransform>().eulerAngles.z == 180 && buttonFour.GetComponent<RectTransform>().eulerAngles.z == 0).ToString());
-        if (buttonOne.GetComponent<RectTransform>().eulerAngles.z == 180 && buttonTwo.GetComponent<RectTransform>().eulerAngles.z == 90 && buttonThree.GetComponent<RectTransform>().eulerAngles.z == 180 && buttonFour.GetComponent<RectTransform>().eulerAngles.z == 0)
+        if (buttonOne.GetComponent<RectTransform>().eulerAngles.z == 0 && buttonTwo.GetComponent<RectTransform>().eulerAngles.z == 0 && buttonThree.GetComponent<RectTransform>().eulerAngles.z == 0 && buttonFour.GetComponent<RectTransform>().eulerAngles.z == 0)
         {
 
             taskScript.constellationCompleted();
             constellationPanel.SetActive(false);
+            border.SetActive(false);
             //task completed
 
         }
+        else
+        {
+            constellationPanel.SetActive(false);
+            textPanel.SetActive(true);
 
-        resetConstellations();
+            TextMeshProUGUI m_Text = textToChange.GetComponent<TextMeshProUGUI>();
+            m_Text.SetText("Try again next loop");
+            Invoke("turnOffText", 2f);
+        }
+        
 
+
+    }
+
+    public void turnOffText()
+    {
+        textPanel.SetActive(false);
     }
 
     public void resetConstellations()
     {
-        buttonOne.transform.localEulerAngles = new Vector3(0, 0, 0);
-        buttonTwo.transform.localEulerAngles = new Vector3(0, 0, 0);
-        buttonThree.transform.localEulerAngles = new Vector3(0, 0, 0);
+        buttonOne.transform.localEulerAngles = new Vector3(0, 0, 90);
+        buttonTwo.transform.localEulerAngles = new Vector3(0, 0, 180);
+        buttonThree.transform.localEulerAngles = new Vector3(0, 0, -90);
         buttonFour.transform.localEulerAngles = new Vector3(0, 0, 0);
     }
 

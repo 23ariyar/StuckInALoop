@@ -14,6 +14,8 @@ public class ConstellationPanel : MonoBehaviour
     public Sprite normalImage;
     public GameObject constellationPanel;
     public RotateClockwise rotateClockwiseScript;
+    
+
 
 
     // Start is called before the first frame update
